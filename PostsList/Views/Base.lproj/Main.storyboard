@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fes-vh-F2X">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PostsList Scene-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="PostsList Scene" customClass="PostsListViewController" customModule="PostsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uFX-NM-Yto">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellPosts" rowHeight="150" id="9Nb-iT-isj" customClass="PostDataCell" customModule="PostsList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Nb-iT-isj" id="va0-14-mZp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-Kx-KT7">
+                                                    <rect key="frame" x="47" y="34" width="320" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="320" id="0ZE-K1-fdk"/>
+                                                        <constraint firstAttribute="height" constant="40" id="IUG-QU-3ts"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tm3-Kx-KT7" firstAttribute="centerX" secondItem="va0-14-mZp" secondAttribute="centerX" id="nme-mK-ibr"/>
+                                                <constraint firstItem="tm3-Kx-KT7" firstAttribute="top" secondItem="va0-14-mZp" secondAttribute="topMargin" constant="23" id="ph8-dc-Usu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="postTitle" destination="tm3-Kx-KT7" id="3L2-jg-VpG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="uFX-NM-Yto" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Shm-lo-VSF"/>
+                            <constraint firstItem="uFX-NM-Yto" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W8n-Ws-4xu"/>
+                            <constraint firstItem="uFX-NM-Yto" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XtV-cs-bBa"/>
+                            <constraint firstItem="uFX-NM-Yto" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gg3-Ko-t3Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Posts" id="nZc-PF-fkc"/>
+                    <connections>
+                        <outlet property="tableView" destination="uFX-NM-Yto" id="1dW-5k-RwS"/>
+                        <segue destination="fZE-Cg-IMk" kind="show" identifier="toDetails" id="8fC-fB-Nti"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="666"/>
+        </scene>
+        <!--PostDetail Scene-->
+        <scene sceneID="xhT-FF-aOM">
+            <objects>
+                <viewController id="fZE-Cg-IMk" userLabel="PostDetail Scene" customClass="DetailsViewController" customModule="PostsList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oZ6-JE-AKE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f1V-j8-bGc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellDetails" rowHeight="200" id="uL4-iB-VmQ" customClass="DetailsDataCell" customModule="PostsList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uL4-iB-VmQ" id="lxO-RK-bmT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ez6-Lh-lQi">
+                                                    <rect key="frame" x="40" y="31" width="334" height="138"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqs-Fa-KvS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="57"/>
+                                                            <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="19"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMS-Px-61W">
+                                                            <rect key="frame" x="0.0" y="81" width="334" height="57"/>
+                                                            <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ez6-Lh-lQi" secondAttribute="bottom" constant="20" id="KJO-C2-drL"/>
+                                                <constraint firstItem="Ez6-Lh-lQi" firstAttribute="leading" secondItem="lxO-RK-bmT" secondAttribute="leadingMargin" constant="20" id="RAq-M5-lQg"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Ez6-Lh-lQi" secondAttribute="trailing" constant="20" id="wlf-ab-tqU"/>
+                                                <constraint firstItem="Ez6-Lh-lQi" firstAttribute="top" secondItem="lxO-RK-bmT" secondAttribute="topMargin" constant="20" id="yB4-C2-oW0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="detailBody" destination="eMS-Px-61W" id="MMI-d7-mq8"/>
+                                            <outlet property="detailTitle" destination="gqs-Fa-KvS" id="sla-dq-74x"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="f1V-j8-bGc" firstAttribute="bottom" secondItem="lff-GN-ewS" secondAttribute="bottom" id="7gv-og-14R"/>
+                            <constraint firstItem="f1V-j8-bGc" firstAttribute="trailing" secondItem="lff-GN-ewS" secondAttribute="trailing" id="GoO-AW-0nU"/>
+                            <constraint firstItem="f1V-j8-bGc" firstAttribute="leading" secondItem="lff-GN-ewS" secondAttribute="leading" id="sCD-Nr-HbU"/>
+                            <constraint firstItem="f1V-j8-bGc" firstAttribute="top" secondItem="lff-GN-ewS" secondAttribute="top" id="yH9-9s-5X0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lff-GN-ewS"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="f1V-j8-bGc" id="T66-CA-vsO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yv1-WQ-7xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1565.217391304348" y="666.96428571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fyQ-OG-CTx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fes-vh-F2X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MuJ-aE-tHz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7aM-Ek-rhv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vvP-p9-GBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108.69565217391305" y="665.625"/>
+        </scene>
+    </scenes>
+</document>
